@@ -6,22 +6,13 @@
 		<div>
 			<h1><a href=""> Django Girls Mi Primer Blog</a></h1>
 		</div>
-		
-		<div>
-			<p>published: 07.02.2019, 12:30</p>
-			<h2><a href="">My first post :)</a></h2>
-			<p>Django (gdh/ˈdʒæŋɡoʊ/jang-goh) es un framework de aplicaciones web gratuito y de código abierto (open source) escrito en Python. Un framework web es un conjunto de componentes que te ayudan a desarrollar sitios web más fácil y rápidamente.
-			Cuando construyes un sitio web, siempre necesitas un conjunto de componentes similares: una manera de manejar la autenticación de usuarios (registrarse, iniciar sesión, cerrar sesión), un panel de administración para tu sitio web, formularios, una forma de subir archivos, etc.</p>
-		</div>
-		
-		<div>
-			<h1><a href=""> Django Girls Mi segundo Blog</a></h1>
-		</div>	
-			<p>published: 07.02.2019, 12:31</p>
-			<h2><a href="">My first post :)</a></h2>
-			<p>Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor medida, programación funcional. Es un lenguaje interpretado, usa tipado dinámico y es multiplataforma.</p>
-		</div>		
-		
+		{% for post in posts %}
+			<div>
+				<p>published: {{ post.published_date }}</p>
+				<h1><a href="">{{ post.title }}</a></h1>
+				<p>{{ post.text|linebreaksbr }}</p>
+			</div>
+		{% endfor %}
 		
 	</body>
 </html>
